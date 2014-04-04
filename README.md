@@ -1,7 +1,8 @@
 PHP-Simple-Pagination
 =====================
 
-This pagination class was made for GameTracker.rs, but I have decided to make in open source
+This pagination class was made for GameTracker.rs, but I have decided to make in open source.
+Check for examples in "examples" folder to see how this pretty pagination works :)
 
 
 License
@@ -22,8 +23,3 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 For questions, help, comments, discussion, etc., you can contribute
 to GitHub - https://github.com/turshija/PHP-Simple-Pagination
-
-@link https://github.com/turshija/PHP-Simple-Pagination
-@copyright 2014 Turshija.com
-@author Boris Vujicic - turshija@gmail.com
-@version 1.1
