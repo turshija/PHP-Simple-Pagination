@@ -12,6 +12,26 @@ $currentPage = $_GET['page'];
 $elementsPerPage = 20;
 $paginationWidth = 7;
 $data = Pagination::load($numberOfElements, $currentPage, $elementsPerPage, $paginationWidth);
+/*
+Now $data contains something like this:
+Array
+(
+    [currentPage] => 1
+    [previousEnabled] => 0
+    [nextEnabled] => 1
+    [numbers] => Array
+        (
+            [0] => 1
+            [1] => 2
+            [2] => 3
+            [3] => 4
+            [4] => 5
+            [5] => ..
+            [6] => 50
+        )
+
+)
+*/
 
 // Now we can build our query that loads data based on current page
 $start = ($data['currentPage']-1) * intval($elementsPerPage);
