@@ -36,21 +36,34 @@ class Pagination {
      * @return array - Array of data needed to make pagination: next/prev pages and all page numbers
      * @author Boris Vujicic - turshija@gmail.com
      */
-    function load($numberOfData, $current, $perPage=20, $width = 7) {
+    public static function load($numberOfData, $current, $perPage=10, $width = 9) {
         // Count number of pages
         $numberOfPages = ceil( $numberOfData / $perPage );
 
         // Make checks about current page (dont allow negative, non integer, larger then max etc)
         $current = (int)$current;
-        if ($current<1) $current = 1;
-        else if ($current>$numberOfPages) $current = $numberOfPages;
+        if ($current < 1) { 
+            $current = 1;
+        } else if ($current > $numberOfPages) {
+            $current = $numberOfPages;
+        }
+
         $ret['currentPage'] = $current;
 
         // set next and previous buttons
-        if ($current<=1) $ret['previousEnabled'] = 0;
-        else $ret['previousEnabled'] = 1;
-        if ($current>=$numberOfPages) $ret['nextEnabled'] = 0;
-        else $ret['nextEnabled'] = 1;
+        if ($current <= 1) { 
+            $ret['previousEnabled'] = 0;
+        } else { 
+            $ret['previousEnabled'] = 1;
+        }
+
+        if ($current >= $numberOfPages) { 
+            $ret['nextEnabled'] = 0;
+        }
+
+        else { 
+            $ret['nextEnabled'] = 1;
+        }
 
         // if number of pages is less then (or equal) to width, return all numbers
         if ( $numberOfPages <= $width ) {
